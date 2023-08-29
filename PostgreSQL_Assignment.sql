@@ -180,12 +180,12 @@ VALUES
 (4,4,2),
 (5,5,4),
 (6,6,1),
-(7,7,3),
+(7,7,4),
 (8,8,3),
-(9,9,3),
-(10,10,3),
-(11,11,3),
-(12,12,3),
+(9,9,2),
+(10,10,5),
+(11,11,4),
+(12,12,2),
 (13,13,3);
 
 
@@ -214,3 +214,11 @@ VALUES (
         NULL
     );
 
+
+--query-2: Retrieve the names of all students who are enrolled in the course titled 'Next.js'.
+
+SELECT students.student_name
+FROM students
+JOIN enrollment ON students.student_id = enrollment.student_id
+JOIN courses ON enrollment.course_id = courses.course_id
+WHERE courses.course_name = 'Next.js';
