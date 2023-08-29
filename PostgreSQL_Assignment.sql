@@ -1,4 +1,3 @@
--- Active: 1692970806409@@127.0.0.1@5432@university_db@public
 
 -- create a databse
 
@@ -256,8 +255,6 @@ SELECT student_name
 FROM students
 ORDER BY student_id
 LIMIT 2 OFFSET 2;
-
-SELECT * FROM students
 
 -- query-6 : Retrieve the course names and the number of students enrolled in each course.
 
