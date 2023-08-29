@@ -268,7 +268,14 @@ GROUP BY courses.course_name;
 
 
 -- query-7 : Calculate and display the average age of all students.
-
 SELECT AVG(age) AS average_age
 FROM students;
+
+
+--query-8 : Retrieve the names of students whose email addresses contain 'example.com'.
+
+
+SELECT student_name
+FROM students
+WHERE email LIKE '%example.com%';  --yahoo, gmail, hotmail
 
