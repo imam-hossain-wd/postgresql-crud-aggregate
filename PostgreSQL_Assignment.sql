@@ -155,6 +155,8 @@ VALUES (
         NULL
     );
 
+-- insert data into courses table
+
 INSERT INTO
     courses (
         course_id,
@@ -186,4 +188,29 @@ VALUES
 (12,12,3),
 (13,13,3);
 
+
+-- Start query
+
+--query-1: Insert a new student record with the following details.
+
+
+INSERT INTO
+    students (
+        student_id,
+        student_name,
+        age,
+        email,
+        frontend_mark,
+        backend_mark,
+        status
+    )
+VALUES (
+        14,
+        'imam',
+        22,
+        'imam@hotmail.com',
+        90,
+        98,
+        NULL
+    );
 
