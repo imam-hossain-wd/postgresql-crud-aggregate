@@ -155,7 +155,7 @@ VALUES (
         NULL
     );
 
--- insert data into courses table
+insert data into courses table
 
 INSERT INTO
     courses (
@@ -168,7 +168,11 @@ VALUES
 (2, 'React.js', 4),
 (3, 'Databse', 3), 
 (4, 'Prisma', 2),
-(5, 'javascript', 5);
+(5, 'Javascript', 5),
+(6, 'Node.js', 3),
+(7, 'PHP', 3);
+
+SELECT *FROM courses
 
 --insert data into enrollment
 
@@ -186,7 +190,9 @@ VALUES
 (10,10,5),
 (11,11,4),
 (12,12,2),
-(13,13,3);
+(13,13,3),
+(14,16,6),
+(15,17,6);
 
 
 -- Start query
@@ -205,10 +211,10 @@ INSERT INTO
         status
     )
 VALUES (
-        14,
-        'imam',
-        22,
-        'imam@hotmail.com',
+        17,
+        'mifat',
+        25,
+        'mifat@hotmail.com',
         90,
         98,
         NULL
@@ -234,3 +240,12 @@ WHERE (frontend_mark + backend_mark) = (
     FROM students
 );
 
+
+-- query 4: Delete all courses that have no students enrolled.
+
+DELETE FROM courses
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM enrollment
+    WHERE enrollment.course_id = courses.course_id
+);
